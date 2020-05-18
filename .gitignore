@@ -1,0 +1,8 @@
+.DS_Store
+results
+.kitchen
+terraform.tfstate
+vendor
+*.lock.json
+.vagrant
+.terraform

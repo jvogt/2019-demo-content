@@ -1,0 +1,9 @@
+---
+lockfile_version: 1
+depends:
+- name: cis-windows2016rtm-release1607-level1-memberserver
+  resolved_source:
+    compliance: admin/cis-windows2016rtm-release1607-level1-memberserver
+    url: https://jv-a2.chef-demo.com/api/v0/compliance/profiles/tar
+    sha256: 9a4f36c2819b548b87fe388cee6ff264fce57ea36c0e7ecfff1277e215b9b655
+  version_constraints: []

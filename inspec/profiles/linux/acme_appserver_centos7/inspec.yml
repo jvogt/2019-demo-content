@@ -1,0 +1,13 @@
+name: acme_appserver_centos7
+title: Acme Appserver Baseline
+maintainer: The Authors
+copyright: The Authors
+copyright_email: you@example.com
+license: Apache-2.0
+summary: An InSpec Compliance Profile
+version: 0.1.0
+supports:
+  platform: os
+depends:
+  - name: acme_baseline_centos7
+    compliance: admin/acme_baseline_centos7

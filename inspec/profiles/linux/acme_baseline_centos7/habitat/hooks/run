@@ -1,0 +1,11 @@
+export HOME="/root" # fixes a bug I don't have time to diagnose
+export INSPEC_CONFIG_DIR={{pkg.svc_config_path}}
+mkdir -p /etc/chef/accepted_licenses
+touch /etc/chef/accepted_licenses/inspec
+
+while true; do
+  {{pkgPathFor "chef/inspec"}}/bin/inspec exec {{pkg.path}}/dist --json-config {{pkg.svc_config_path}}/config.json --target-id {{sys.member_id}}
+
+  echo "sleeping for {{cfg.sleep_time}} seconds"
+  sleep {{cfg.sleep_time}}
+done

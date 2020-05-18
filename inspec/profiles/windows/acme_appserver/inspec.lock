@@ -1,0 +1,16 @@
+---
+lockfile_version: 1
+depends:
+- name: acme_baseline
+  resolved_source:
+    compliance: admin/acme_baseline
+    url: https://jv-a2.chef-demo.com/api/v0/compliance/profiles/tar
+    sha256: fe42777997dbd515f71d56c9f8d69748597b63a3f758238d1f1c61c2b3d6899b
+  version_constraints: []
+  dependencies:
+  - name: cis-windows2016rtm-release1607-level1-memberserver
+    resolved_source:
+      compliance: admin/cis-windows2016rtm-release1607-level1-memberserver
+      url: https://jv-a2.chef-demo.com/api/v0/compliance/profiles/tar
+      sha256: 24dae1bfe5b71026683a451f22dfc5084e7e54b623869162a533dd4345fce7e1
+    version_constraints: []

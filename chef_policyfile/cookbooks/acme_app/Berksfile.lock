@@ -1,0 +1,9 @@
+DEPENDENCIES
+  acme_app
+    path: .
+    metadata: true
+
+GRAPH
+  acme_app (0.1.0)
+    apache2 (>= 0.0.0)
+  apache2 (8.0.2)

@@ -1,0 +1,9 @@
+interval = 5
+run_lock_timeout = 1800
+log_level = "warn"
+ssl_verify_mode = ":verify_peer"
+
+[data_collector]
+enable = true
+token = "api-token-for-compliance-demo"
+server_url = "https://jv-a2.chef-demo.com/data-collector/v0/"

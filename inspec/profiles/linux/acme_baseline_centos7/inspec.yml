@@ -1,0 +1,13 @@
+name: acme_baseline_centos7
+title: Acme Baseline for Centos 7
+maintainer: The Authors
+copyright: The Authors
+copyright_email: you@example.com
+license: Apache-2.0
+summary: An InSpec Compliance Profile
+version: 0.1.0
+supports:
+  platform: os
+depends:
+  - name: cis-centos7-level1
+    compliance: admin/cis-centos7-level1 # path: vendor/383a52cfd11f1cf1e9ee2e54ad7b05a810e20e903d550d8f9e15550b5cb6464b

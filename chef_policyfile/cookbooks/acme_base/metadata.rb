@@ -1,0 +1,13 @@
+name 'acme_base'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'All Rights Reserved'
+description 'Installs/Configures acme_base'
+long_description 'Installs/Configures acme_base'
+version '0.1.0'
+chef_version '>= 13.0'
+
+depends 'os-hardening'
+depends 'ntp'
+depends 'chef-client'
+depends 'audit'

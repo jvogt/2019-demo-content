@@ -1,0 +1,25 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  product_name: chef
+  product_version: 14.12.3
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos-7
+    driver:
+      linked_clone: true
+
+suites:
+  - name: acme_app
+    provisioner:
+      policyfile: acme_app.rb
+    verifier:
+      inspec_tests:
+        - name: acme_baseline_centos7
+          compliance: admin/acme_baseline_centos7

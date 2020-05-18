@@ -1,0 +1,23 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  product_name: chef
+  product_version: 14.12.3
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos-7
+
+suites:
+  - name: base
+    provisioner:
+      policyfile: base.rb
+    verifier:
+      inspec_tests:
+        - name: cis-centos7-level1-wrapper
+          path: ../../inspec/profiles/cis-centos7-lv1-wrapper # compliance: admin/cis-centos7-lv1-wrapper

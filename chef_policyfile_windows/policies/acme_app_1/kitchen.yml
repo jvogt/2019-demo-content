@@ -1,0 +1,22 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: win2016-with-hab
+    driver:
+      linked_clone: true
+    
+suites:
+  - name: default
+    verifier:
+      inspec_tests:
+        - name: acme_appserver
+          compliance: admin/acme_appserver #cis-windows2016rtm-release1607-level1-memberserver 
+    attributes:

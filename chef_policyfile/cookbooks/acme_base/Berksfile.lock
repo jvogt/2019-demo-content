@@ -1,0 +1,11 @@
+DEPENDENCIES
+  acme_base
+    path: .
+    metadata: true
+
+GRAPH
+  acme_base (0.1.0)
+    ntp (>= 0.0.0)
+    os-hardening (>= 0.0.0)
+  ntp (3.7.0)
+  os-hardening (4.0.0)
