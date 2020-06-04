@@ -8,6 +8,14 @@ apt_update
 
 include_recipe 'chef-client::default'
 include_recipe 'os-hardening'
-include_recipe 'ntp'
+# include_recipe 'ntp'
 
 include_recipe 'audit::default'
+
+package 'ntp' do
+  action :install
+end
+
+service 'ntpd' do
+  action [:enable, :start]
+end
