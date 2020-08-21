@@ -3,6 +3,9 @@ run_lock_timeout = 1800
 log_level = "warn"
 ssl_verify_mode = ":verify_peer"
 
+[chef_license]
+acceptance = "accept-no-persist"
+
 [data_collector]
 enable = true
 token = "api-token-for-compliance-demo"

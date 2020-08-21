@@ -1,5 +1,0 @@
-{{#if cfg.attributes ~}}
-{{toJson cfg.attributes}}
-{{else ~}}
-{}
-{{/if ~}}
