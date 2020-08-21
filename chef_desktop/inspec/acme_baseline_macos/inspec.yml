@@ -1,0 +1,13 @@
+name: acme_baseline_macos
+title: Acme Baseline for macOS
+maintainer: The Authors
+copyright: The Authors
+copyright_email: you@example.com
+license: Apache-2.0
+summary: An InSpec Compliance Profile
+version: 0.4.0
+supports:
+  platform: os
+depends:
+  - name: cis-applemacos10.15-level1
+    path: ../cis-applemacos10.15-level1

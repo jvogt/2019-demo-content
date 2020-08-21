@@ -1,0 +1,9 @@
+---
+name: cis-applemacos10.13-level1
+title: CIS Apple macOS 10.13 Benchmark Level 1
+summary: CIS Apple macOS 10.13 Benchmark Level 1 translated from SCAP
+version: 1.0.0-2
+maintainer: Chef Software, Inc.
+copyright: Chef Software, Inc.
+copyright_email: support@chef.io
+license: Proprietary, All rights reserved

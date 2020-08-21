@@ -1,0 +1,68 @@
+---
+resources:
+  - type: "desktop_screensaver"
+    name: "Sets up a Screensaver to come on and require a password after xx minutes"
+    idle_time: 20
+    require_password: true
+    # value is in seconds (can you put comments at the end of a line in yaml?  IDK)
+    delay_before_password_prompt: 5
+    # note the lack of quotes here which converts it to a symbol
+    action: enable
+  - type: "mac_app_management"
+    name: "A Mac resource for configuring nodes to use Munki to manage apps"
+    munki_repo_url: 'https://github.com/munki/munki/releases/download/<somepackage>'
+    munki_client_download_url: 'https://edm-desktop-munki.s3-us-west-2.amazonaws.com/munki_repo'
+    munki_user: 'munki'
+    munki_password: 'ILoveMunki'
+    action: install
+  - type: "rescue_account"
+    name: "A Resource for adding an admin account to the node. The password must conform to the password policy"
+    rescue_account_name: 'foo'
+    rescue_account_password: 'foo_password'
+    action: enable
+  - type: "chef_schedule"
+    name: 'Setup the Chef client to run every 30 minutes'
+    running_interval: 30
+    start_time: '16:10'
+    action: enable
+  - type: client_reboot
+    name: 'Restart the Device Immediately'
+    reboot_reason: 'Forced reboot after installing things'
+    action: nothing
+  - type: mac_password_policy
+    name: 'Setup appropriate password complexity and rules'
+    max_failed_logins: 5
+    lockout_time: 2
+    maximum_password_age: 365
+    minimum_password_length: 12
+    minimum_numeric_characters: 2
+    minimum_lowercase_letters: 0
+    minimum_uppercase_letters: 0
+    minimum_special_characters: 0
+    remember_how_many_passwords: 3
+    exempt_user: 'MyAdmin'
+    action: set
+  - type: mac_power_management
+    name: 'Set the Device to a defined power level'
+    computer_sleep_time: 'never'
+    display_sleep_time: 'never'
+    disk_sleep_time: 'never'
+    action: set
+  - type: automatic_software_updates
+    name: 'Settings for OS and Patch updates'
+    check: true
+    download: true
+    install_os: true
+    install_app_store: true
+    install_critical: true
+    action: set
+  - type: disk_encryption
+    name: 'Turning on FileVault for the console user'
+    action: enable
+  - type: system_preferences
+    name: 'Managing firewall and Screen Settings'
+    firewall: true
+    autologout: true
+    autologout_time: 900
+    admin_account_control: true
+    action: set

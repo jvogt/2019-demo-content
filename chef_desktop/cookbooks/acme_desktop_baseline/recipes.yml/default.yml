@@ -1,0 +1,9 @@
+---
+resources:
+  - type: "file"
+    name: "/tmp/xyz.out"
+    content: "whatever"
+  - type: "execute"
+    name: "some name here"
+    command: "true"
+

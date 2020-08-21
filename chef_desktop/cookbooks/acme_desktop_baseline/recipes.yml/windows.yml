@@ -1,0 +1,67 @@
+---
+resources:
+  - type: desktop_screensaver
+    name: 'Sets up a Screensaver to come on and require a password after xx minutes'
+    require_password: true
+    idle_time: 20
+    allow_lower_user_idle_time: false
+    screensaver_name: 'mystify.scr'
+    action: enable
+  - type: disk_encryption
+    name: 'Turns on BitLocker Drive Encryption'
+    action: enable
+  - type: windows_password_policy
+    name: 'Settings for password complexity, length and duration'
+    require_complex_passwords: true
+    minimum_password_length: 12
+    maximum_password_age: 365
+    action: set
+  - type: rescue_account
+    name: 'Configure an Admin level account for IT to use'
+    rescue_account_name: 'MyAdmin'
+    rescue_account_password: '123Opscode!!'
+    action: create
+  - type: windows_update_settings
+    name: 'Settings to Configure Windows Nodes to automatically receive updates'
+    disable_os_upgrades: false
+    elevate_non_admins: true
+    add_to_target_wsus_group: false
+    block_windows_update_website: false
+    automatic_update_option: 4
+    automatically_install_minor_updates: false
+    enable_detection_frequency: false
+    custom_detection_frequency: 22
+    no_reboot_with_users_logged_on: true
+    disable_automatic_updates: false
+    scheduled_install_day: 6
+    scheduled_install_hour: 20
+    update_other_ms_products: false
+    use_custom_update_server: false
+    action: enable
+  - type: windows_desktop_winrm_settings
+    name: 'Settings to Set WinRM on a node for desktop-config'
+    action: nothing
+  - type: windows_app_management
+    name: 'Use Gorilla to manage Apps'
+    how_often_to_check_for_updates: 'daily'
+    action: enable
+  - type: chef_client_scheduled_task
+    name: 'Run Chef Infra Client every 30 minutes'
+    frequency: 'minute'
+    frequency_modifier: 30
+  - type: client_reboot
+    name: 'Restart the Device Immediately'
+    reboot_reason: 'Forced reboot after installing things'
+    action: nothing
+  - type: windows_power_management
+    name: 'Set the Device to a defined power level'
+    power_scheme_label: 'Unrestricted'
+    power_level: 'ultimate'
+    action: set
+  - type: system_preferences
+    name: 'Managing firewall and Screen Settings'
+    firewall: true
+    autologout: true
+    autologout_time: 900
+    admin_account_control: true
+    action: enable

@@ -1,0 +1,60 @@
+---
+Chocolatey:
+  display_name: Chocolatey
+  check:
+    file:
+      - path: C:\ProgramData\chocolatey\choco.exe
+        version: 0.10.15
+  installer:
+    hash: 0C1282378641E03564844D04881209AA946D7D2475049BE32B3151BD68F2758F
+    location: packages/chocolatey/chocolatey_installer-1.0.ps1
+    type: ps1
+  version: 1.0
+
+ChocolateyCoreExtension:
+  dependencies:
+    - Chocolatey
+  display_name: Chocolatey Core Extension
+  check:
+    file:
+      - path: C:\ProgramData\chocolatey\extensions\chocolatey-core\chocolatey-core.psm1
+        hash: 376E6EDA567DDDD6AA70CFC9EC5380CE0EB1383BE83C2FBDC87F6FC79252E4E8
+  installer:
+    hash: 5ECEF3B776508CEBC4B52E9AC7F04D213C2045A6765F12E17545A5FBE2F41928
+    location: packages/chocolatey/extensions/core/chocolatey-core.extension.1.3.5.1.nupkg
+    type: nupkg
+  version: 1.3.5.1
+
+FireFox:
+  display_name: Firefox
+  check:
+    file:
+      - path: C:\Program Files\Mozilla Firefox\firefox.exe
+        version: 75.0
+  installer:
+    hash: FF029F6E59D9D92D3AC5F8E837C973B641B3400980624D3A830DCFE55D4C71FC
+    location: packages/firefox/Firefox Setup 75.0.exe
+    arguments:
+      - /S
+      - /INI=c:\gorilla\cache\install.ini
+    type: exe
+  version: 75.0
+
+VSCode:
+  display_name: VSCode
+  check:
+    file:
+      - path: C:\Program Files\Microsoft VS Code\Code.exe
+        version: 1.45.1
+  installer:
+    location: packages/vscode/VSCodeSetup-x64-1.45.1.exe
+    hash: E9E107CF53F8F06688C881E4616BD9A8553D012A657389399827E0EC2155633C
+    arguments:
+     - /VERYSILENT
+     - /MERGETASKS=!runcode
+    type: exe
+  uninstaller:
+    location: packages/vscode/VSCodeSetup-x64-1.45.1.exe
+    hash: E9E107CF53F8F06688C881E4616BD9A8553D012A657389399827E0EC2155633C
+    type: exe
+  version: 1.45.1

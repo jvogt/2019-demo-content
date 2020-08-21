@@ -1,0 +1,3 @@
+import base64
+
+print "Authorization: Basic %s" % base64.b64encode("<%= @user %>:<%= @pass %>")

@@ -1,0 +1,16 @@
+name: acme_creative_macos
+title: Acme Creative User - MacOS Profile
+maintainer: The Authors
+copyright: The Authors
+copyright_email: you@example.com
+license: Apache-2.0
+summary: An InSpec Compliance Profile
+version: 0.4.0
+supports:
+  platform: os
+# depends:
+#   - name: acme_baseline_macos
+#     compliance: admin/acme_baseline_macos
+depends:
+  - name: acme_baseline_macos
+    path: ../acme_baseline_macos

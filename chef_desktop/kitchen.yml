@@ -1,0 +1,39 @@
+---
+provisioner:
+  name: chef_zero
+  deprecations_as_errors: true
+  chef_license: accept-no-persist
+  product_name: chef
+  channel: current
+
+verifier:
+  load_plugins: true
+  name: inspec
+
+platforms:
+  - name: macos
+    driver:
+      box: ramsey/macos-catalina
+      name: vagrant
+      customize:
+        memory: 4096
+        cpus: 2
+      linked_clone: true
+
+  # - name: windows
+  #   driver:
+  #     box: gusztavvargadr/windows-10
+  #     name: vagrant
+  #     customize:
+  #       memory: 4096
+  #       cpus: 2
+  #     linked_clone: true
+
+suites:
+  - name: role-engineering
+    provisioner:
+      policyfile: role-engineering.rb
+    verifier:
+      inspec_tests:
+        - name: acme_engineering_macos
+          compliance: admin/acme_engineering_macos
