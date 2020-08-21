@@ -14,7 +14,7 @@ default['chef_client']['splay']    = '1'
 # default['audit']['reporter'] = 'chef-server-automate'
 # default['audit']['profiles'] =[
 #   {
-#     'name': 'cis-centos7-lv1-wrapper',
-#     'compliance': 'admin/cis-centos7-lv1-wrapper',
+#     'name': 'acme_baseline_centos7',
+#     'compliance': 'admin/acme_baseline_centos7',
 #   }
 # ]
