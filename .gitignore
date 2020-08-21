@@ -6,3 +6,4 @@ vendor
 *.lock.json
 .vagrant
 .terraform
+inspec.lock
